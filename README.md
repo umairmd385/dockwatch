@@ -2,7 +2,7 @@
 
 > Bring Kubernetes-style secret & config reload automation to Docker & Docker Compose
 
-![Dockwatch Logo](/home/user/.gemini/antigravity/brain/c1ac7e7a-01d5-47aa-8e0b-552a8a33908d/dockwatch_logo_1774327264407.png)
+![Dockwatch Logo](./images/dockwatch_logo_1774327264407.png)
 
 ⭐ If this project helps you, please give it a star!
 
