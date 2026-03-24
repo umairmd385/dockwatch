@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  app:
+    image: nginx:alpine
+    labels:
+      reloader.enable: "true"
+      reloader.mode: "signal"
+      reloader.signal: "SIGHUP"
+      reloader.watch: "/etc/nginx/nginx.conf"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:80"
+
+  reloader:
+    build: .
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    command: ["--watch-dir=/etc/nginx", "--log-level=debug"]
